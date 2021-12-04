@@ -1,0 +1,60 @@
+﻿<Window x:Class="ReceptZaTorte.Pregled"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReceptZaTorte"
+        mc:Ignorable="d"
+        Title="Recepti"  AllowsTransparency="True" Background="Transparent" MouseLeftButtonDown="Window_MouseLeftButtonDown"  Height="650" WindowStyle="None" Width="900" >
+    <Grid >
+        <Path   StrokeThickness="10" Name="UIPath" Stroke="GreenYellow" Stretch="Fill" Height="600" Width="700" >
+            <Path.Fill>
+                <SolidColorBrush Color="White"/>
+            </Path.Fill>
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="0,50">
+                        <LineSegment Point="20,25" />
+                        <LineSegment Point="0,0"/>
+                        <LineSegment Point="300,0"/>
+                        <LineSegment Point="450,20"/>
+                        <LineSegment Point="600,0"/>
+                        <LineSegment Point="900,0"/>
+                        <LineSegment Point="880,25"/>
+                        <LineSegment Point="900,50"/>
+                        <LineSegment Point="900,600"/>
+                        <LineSegment Point="880,625"/>
+                        <LineSegment Point="900,650"/>
+                        <LineSegment Point="600,650"/>
+                        <LineSegment Point="450,630"/>
+                        <LineSegment Point="300,650"/>
+                        <LineSegment Point="0,650"/>
+                        <LineSegment Point="20,625"/>
+                        <LineSegment Point="0,600"/>
+                        <LineSegment Point="0,50"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+
+        <Button Content="Izadji" FontWeight="Bold" Background="GreenYellow" HorizontalAlignment="Left" Height="47" Margin="395,549,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click" />
+        <Label Content="RECEPT" HorizontalContentAlignment="Center" FontSize="40" FontWeight="Bold" Background="Black" Foreground="LightGreen" VerticalContentAlignment="Center"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="316,57,0,0" Width="268" Height="68"/>
+        <Label Content="Ime torte:" FontSize="20" HorizontalAlignment="Left" Height="36" Margin="159,175,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Recept za (broj osoba):" FontSize="20" HorizontalAlignment="Left" Height="36" Margin="159,211,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="Rok trajanja:" FontSize="20" HorizontalAlignment="Left" Height="36" Margin="159,247,0,0" VerticalAlignment="Top" Width="167"/>
+        <Label Content="Vreme pravljenja:" FontSize="20" HorizontalAlignment="Left" Height="36" Margin="159,283,0,0" VerticalAlignment="Top" Width="188"/>
+        <Label Content="Vocna/Cokoladna:" FontSize="20" HorizontalAlignment="Left" Height="36" Margin="159,319,0,0" VerticalAlignment="Top" Width="188"/>
+        <Label x:Name="imetorte" FontSize="15" FontWeight="bold" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="264,175,0,0" Height="36" Width="184"/>
+        <Label x:Name="osoba" FontSize="15" FontWeight="bold" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="376,211,0,0" Height="36" Width="72"/>
+        <Label x:Name="rok" FontSize="15" FontWeight="bold" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="287,247,0,0" Height="36" Width="161"/>
+        <Label x:Name="vreme" FontSize="15" FontWeight="bold" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="326,283,0,0" Height="36" Width="122"/>
+        <Label x:Name="vc" FontSize="15" FontWeight="bold" Content="" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="326,319,0,0" Height="36" Width="122"/>
+
+        <RichTextBox x:Name="recept" BorderThickness="4" BorderBrush="GreenYellow" IsReadOnly="True" HorizontalAlignment="Left" Height="179" VerticalAlignment="Top" Width="580" Margin="159,365,0,0">
+            <FlowDocument>
+                <Paragraph/>
+            </FlowDocument>
+        </RichTextBox>
+        <Image x:Name="slika" HorizontalAlignment="Left" Height="161" VerticalAlignment="Top" Width="185" Margin="554,175,0,0"/>
+    </Grid>
+</Window>

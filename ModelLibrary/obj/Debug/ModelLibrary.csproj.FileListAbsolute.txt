@@ -1,0 +1,12 @@
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\bin\Debug\MiodelLibrary.dll
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\bin\Debug\MiodelLibrary.pdb
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csprojAssemblyReference.cache
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.dll
+C:\Users\Nebojsa\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.pdb
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\bin\Debug\MiodelLibrary.dll
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\bin\Debug\MiodelLibrary.pdb
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csproj.AssemblyReference.cache
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.dll
+D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.pdb
