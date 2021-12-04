@@ -145,7 +145,12 @@ namespace ReceptZaTorte
 			}
 			int br1;
 			if(int.TryParse(osoba.Text, out br1)){
-				brosobavalidacija.Content = "";
+				if (int.Parse(osoba.Text) < 0) {
+					brosobavalidacija.Content = "Negativan broj \n";
+					brosobavalidacija.Foreground = Brushes.Red;
+				} else {
+					brosobavalidacija.Content = "";
+                }
 			} else {
 				brosobavalidacija.Content = "Potrebno uneti za koliko \n osoba je recept";
 				brosobavalidacija.Foreground = Brushes.Red;
@@ -168,9 +173,11 @@ namespace ReceptZaTorte
 
 			string[] niz = vreme.Text.Split(':');
 			int br2, br3;
-			if(!int.TryParse(niz[0],out br2) || !int.TryParse(niz[1],out br3)){
-				trajanjevalidacija.Content = "Nepravilan format\n vremena";
-				trajanjevalidacija.Foreground = Brushes.Red;
+			if(int.TryParse(niz[0],out br2) || int.TryParse(niz[1],out br3)){
+				if (int.Parse(niz[0]) < 0 || int.Parse(niz[1]) < 0) {
+					trajanjevalidacija.Content = "Negativan broj\n ili nepravilan format";
+					trajanjevalidacija.Foreground = Brushes.Red;
+				}
 				val = false;
 			} else {
 				if(br2>=24 || br3 > 59) {
