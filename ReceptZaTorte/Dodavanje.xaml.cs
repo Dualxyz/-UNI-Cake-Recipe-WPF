@@ -177,8 +177,8 @@ namespace ReceptZaTorte
 				if (int.Parse(niz[0]) < 0 || int.Parse(niz[1]) < 0) {
 					trajanjevalidacija.Content = "Negativan broj\n ili nepravilan format";
 					trajanjevalidacija.Foreground = Brushes.Red;
+					val = false;
 				}
-				val = false;
 			} else {
 				if(br2>=24 || br3 > 59) {
 					trajanjevalidacija.Content = "Nepravilan unos \nsati i minuta";
