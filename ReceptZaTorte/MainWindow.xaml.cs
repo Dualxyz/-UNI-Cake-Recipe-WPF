@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +59,10 @@ namespace ReceptZaTorte
 			MessageBoxResult result = MessageBox.Show("Da li želite da obrišete recept?", "Brisanje recepta", MessageBoxButton.YesNo);
 			switch (result){
 				case MessageBoxResult.Yes:
+					//Baza[bazagrid.SelectedIndex].Putanja
+					var FileToRemove = Baza[bazagrid.SelectedIndex].Putanja;
 					Baza.RemoveAt(bazagrid.SelectedIndex);
+					File.Delete(FileToRemove);
 					//MessageBox.Show($"{bazagrid.SelectedIndex}");
 					bazagrid.Items.Refresh();
 					break;

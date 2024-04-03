@@ -10,3 +10,9 @@ D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csproj.Asse
 D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
 D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.dll
 D:\User\Desktop\AndrejJovanovic\MiodelLibrary\obj\Debug\MiodelLibrary.pdb
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\bin\Debug\MiodelLibrary.dll
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\bin\Debug\MiodelLibrary.pdb
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\obj\Debug\ModelLibrary.csproj.AssemblyReference.cache
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\obj\Debug\ModelLibrary.csproj.CoreCompileInputs.cache
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\obj\Debug\MiodelLibrary.dll
+D:\User\Desktop\Cake-Recipe-WPF-main\ModelLibrary\obj\Debug\MiodelLibrary.pdb

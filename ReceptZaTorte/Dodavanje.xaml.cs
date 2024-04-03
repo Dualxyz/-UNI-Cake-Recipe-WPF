@@ -91,7 +91,8 @@ namespace ReceptZaTorte
 					dlg.Title = "Snimanje tekstualne datoteke";
 
 					if (dlg.ShowDialog() == true){
-						using (FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create)){
+						//using (FileStream fileStream = new FileStream(dlg.FileName, FileMode.Create)){
+						using (FileStream fileStream = new FileStream(dlg.FileName, FileMode.OpenOrCreate)){
 							TextRange range = new TextRange(recepttekst.Document.ContentStart, recepttekst.Document.ContentEnd);
 							range.Save(fileStream, DataFormats.Rtf);
 							MainWindow.Baza.Add(new Recept(int.Parse(osoba.Text), imetorte.Text, rok.SelectedDate.Value, slika.Source.ToString(), dlg.FileName, vreme.Text, d));
@@ -106,7 +107,7 @@ namespace ReceptZaTorte
 					} else {
 						d = false;
                     }
-					FileStream fs = new FileStream(rec.Putanja, FileMode.OpenOrCreate);
+					FileStream fs = new FileStream(rec.Putanja, FileMode.Create);
 					TextRange tr = new TextRange(recepttekst.Document.ContentStart, recepttekst.Document.ContentEnd);
 					tr.Save(fs, DataFormats.Rtf);
 					fs.Close();
@@ -136,7 +137,8 @@ namespace ReceptZaTorte
 		private bool Validate(){
 			bool val = true;
 
-			if (imetorte.Text.Trim() == "" || imetorte.Text == ""){
+			if (imetorte.Text.Trim() == "" || imetorte.Text == "" || imetorte.Text == "Ime recepta...")
+            {
 				imevalidacija.Content = "Potrebno uneti\n ime recepta";
 				imevalidacija.Foreground = Brushes.Red;
 				val = false;
@@ -148,6 +150,7 @@ namespace ReceptZaTorte
 				if (int.Parse(osoba.Text) < 0) {
 					brosobavalidacija.Content = "Negativan broj \n";
 					brosobavalidacija.Foreground = Brushes.Red;
+					val = false;
 				} else {
 					brosobavalidacija.Content = "";
                 }
@@ -171,23 +174,45 @@ namespace ReceptZaTorte
 				}
 			}
 
-			string[] niz = vreme.Text.Split(':');
-			int br2, br3;
-			if(int.TryParse(niz[0],out br2) || int.TryParse(niz[1],out br3)){
-				if (int.Parse(niz[0]) < 0 || int.Parse(niz[1]) < 0) {
+			try
+			{
+				string[] niz = vreme.Text.Split(':');
+				int br2, br3 =0;
+				if(int.TryParse(niz[0],out br2) && int.TryParse(niz[1],out br3)){
+					if (int.Parse(niz[0]) < 0 || int.Parse(niz[1]) < 0) {
+						trajanjevalidacija.Content = "Negativan broj\n ili nepravilan format";
+						trajanjevalidacija.Foreground = Brushes.Red;
+						val = false;
+					} else
+					{
+                        trajanjevalidacija.Content = "";
+                        if (br2 >= 24 || br3 > 59)
+                        {
+                            trajanjevalidacija.Content = "Nepravilan unos \nsati i minuta";
+                            trajanjevalidacija.Foreground = Brushes.Red;
+                            val = false;
+                        }
+                        else
+                        {
+                            trajanjevalidacija.Content = "";
+                        }
+                    }
+				} else
+				{
 					trajanjevalidacija.Content = "Negativan broj\n ili nepravilan format";
 					trajanjevalidacija.Foreground = Brushes.Red;
 					val = false;
 				}
-			} else {
-				if(br2>=24 || br3 > 59) {
-					trajanjevalidacija.Content = "Nepravilan unos \nsati i minuta";
-					trajanjevalidacija.Foreground = Brushes.Red;
-					val = false;
-				} else {
-					trajanjevalidacija.Content = "";
-				}
-			}
+
+				br2 = 0;
+				br3 = 0;
+			} catch
+			{
+                trajanjevalidacija.Content = "Negativan broj\n ili nepravilan format";
+                trajanjevalidacija.Foreground = Brushes.Red;
+                val = false;
+            }
+
 
 			TextRange spec = new TextRange(recepttekst.Document.ContentStart, recepttekst.Document.ContentEnd);
 			if (string.IsNullOrWhiteSpace(spec.Text)){
